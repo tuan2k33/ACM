@@ -1,0 +1,47 @@
+name: ACM Project
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    name: Build & OTA Upload
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install PlatformIO CLI
+        run: |
+          pip install -U platformio
+
+      - name: Validate PlatformIO Configuration
+        run: |
+          pio check --project-dir .
+
+      - name: Lint Arduino Code (Optional)
+        uses: fvonhaden/Arduino-Code-Linter@v1.0.0
+        with:
+          sketch-folder: src/
+
+      - name: Build Firmware
+        run: |
+          pio run --project-dir .
+
+      - name: Upload Firmware via OTA
+        if: ${{ secrets.ESP32_IP && secrets.OTA_PASSWORD }}
+        env:
+          ESP32_IP: ${{ secrets.ESP32_IP }}
+          OTA_PASSWORD: ${{ secrets.OTA_PASSWORD }}
+        run: |
+          echo "Uploading firmware to ESP32 at IP: ${ESP32_IP}"
+          pio run --target upload --project-dir . --upload-port ${ESP32_IP} --board esp32dev --board-upload-password ${OTA_PASSWORD}
