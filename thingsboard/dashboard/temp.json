@@ -6,6 +6,96 @@
   "configuration": {
     "description": "",
     "widgets": {
+      "c033f1c0-a211-4a22-9e51-1d8f6f15b9e9": {
+  "typeFullFqn": "tenant.last_value_card",
+  "type": "latest",
+  "sizeX": 6,
+  "sizeY": 2,
+  "config": {
+    "datasources": [
+      {
+        "type": "device",
+        "name": "",
+        "deviceId": "cde78cc0-2398-11ef-b19f-cdc6a3f105ff",
+        "dataKeys": [
+          {
+            "name": "rfidUid",
+            "type": "timeseries",
+            "label": "rfidUid",
+            "color": "#2196f3",
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "timewindow": {
+      "realtime": {
+        "interval": 1000,
+        "timewindowMs": 60000
+      }
+    },
+    "showTitle": false,
+    "backgroundColor": "#fff",
+    "color": "rgba(0, 0, 0, 0.87)",
+    "padding": "8px",
+    "settings": {
+      "title": "RFID UID",
+      "displayValueOnly": true
+    },
+    "title": "Last Value Card",
+    "dropShadow": false,
+    "enableFullscreen": false,
+    "useDashboardTimewindow": true
+  },
+  "row": 3,
+  "col": 26,
+  "id": "c033f1c0-a211-4a22-9e51-1d8f6f15b9e9"
+},
+"c033f1c0-a211-4a22-9e51-1d8f6f15b9e9": {
+  "typeFullFqn": "tenant.last_value_card",
+  "type": "latest",
+  "sizeX": 6,
+  "sizeY": 2,
+  "config": {
+    "datasources": [
+      {
+        "type": "device",
+        "name": "",
+        "deviceId": "cde78cc0-2398-11ef-b19f-cdc6a3f105ff",
+        "dataKeys": [
+          {
+            "name": "rfidUid",
+            "type": "timeseries",
+            "label": "rfidUid",
+            "color": "#2196f3",
+            "settings": {}
+          }
+        ]
+      }
+    ],
+    "timewindow": {
+      "realtime": {
+        "interval": 1000,
+        "timewindowMs": 60000
+      }
+    },
+    "showTitle": false,
+    "backgroundColor": "#fff",
+    "color": "rgba(0, 0, 0, 0.87)",
+    "padding": "8px",
+    "settings": {
+      "title": "RFID UID",
+      "displayValueOnly": true
+    },
+    "title": "Last Value Card",
+    "dropShadow": false,
+    "enableFullscreen": false,
+    "useDashboardTimewindow": true
+  },
+  "row": 3,
+  "col": 26,
+  "id": "c033f1c0-a211-4a22-9e51-1d8f6f15b9e9"
+},
       "7242d810-73af-b245-7121-2242d09c2ee4": {
         "typeFullFqn": "tenant.title_text",
         "type": "static",
@@ -1036,7 +1126,19 @@
                 "sizeY": 5,
                 "row": 9,
                 "col": 21
-              }
+              },
+              "b012f5a6-2f44-4d9c-91e6-dba2142a8340": {
+  "sizeX": 5,
+  "sizeY": 2,
+  "row": 1,
+  "col": 26
+},
+"c033f1c0-a211-4a22-9e51-1d8f6f15b9e9": {
+  "sizeX": 6,
+  "sizeY": 2,
+  "row": 3,
+  "col": 26
+}
             },
             "gridSettings": {
               "backgroundColor": "#F6F7F9",
